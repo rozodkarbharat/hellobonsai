@@ -4,7 +4,7 @@ import * as types from "./invoice.actionTypes";
 export const getInvoiceAPI = (token) => (dispatch) => {
   dispatch({ type: types.GET_INVOICE_LOADING });
   return axios
-    .get("https://ancient-scrubland-60473.herokuapp.com/invoice", {
+    .get("https://bonsai-17iy.onrender.com/invoice", {
       headers: {
         Authorization: "Bearer " + token,
       },
@@ -19,7 +19,7 @@ export const getInvoiceAPI = (token) => (dispatch) => {
 
 export const createInvoiceAPI = (invoice,token) => (dispatch) => {
   return axios.post(
-    "https://ancient-scrubland-60473.herokuapp.com/invoice",
+    "https://bonsai-17iy.onrender.com/invoice",
     invoice,
     {
       headers: {
@@ -31,7 +31,7 @@ export const createInvoiceAPI = (invoice,token) => (dispatch) => {
 
 export const updateInvoiceAPI = (id, updated_invoice, token) => (dispatch) => {
   return axios.patch(
-    `https://ancient-scrubland-60473.herokuapp.com/invoice/${id}`,
+    `https://bonsai-17iy.onrender.com/invoice/${id}`,
     updated_invoice,
     {
       headers: {
@@ -43,7 +43,7 @@ export const updateInvoiceAPI = (id, updated_invoice, token) => (dispatch) => {
 
 export const deleteInvoiceAPI = (id, token) => (dispatch) => {
   return axios.delete(
-    `https://ancient-scrubland-60473.herokuapp.com/invoice/${id}`,
+    `https://bonsai-17iy.onrender.com/invoice/${id}`,
     {
       headers: {
         Authorization: "Bearer " + token,

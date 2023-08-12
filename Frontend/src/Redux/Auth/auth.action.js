@@ -4,7 +4,7 @@ import * as types from "./auth.actionTypes";
 export const registerAPI = (payload) => (dispatch) => {
   console.log('payload:', payload)
   return axios
-    .post("https://ancient-scrubland-60473.herokuapp.com/user/register", payload)
+    .post("https://bonsai-17iy.onrender.com/user/register", payload)
     .then((res) => {
       dispatch({ type: types.USER_REGISTER });
     });
@@ -13,7 +13,7 @@ export const registerAPI = (payload) => (dispatch) => {
 export const loginAPI = (creds) => (dispatch) => {
   dispatch({ type: types.USER_LOGIN_LOADING });
   return axios
-    .post("https://ancient-scrubland-60473.herokuapp.com/user/login", creds)
+    .post("https://bonsai-17iy.onrender.com/user/login", creds)
     .then((res) => {
       console.log("res FROM ACTION:", res.data);
       dispatch({ type: types.USER_LOGIN_SUCCESS, payload: res.data});
