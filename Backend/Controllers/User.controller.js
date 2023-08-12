@@ -45,7 +45,7 @@ UserController.post("/login", async (req, res) => {
         { email: user.email, userId: user._id },
         process.env.jwt_secret_key
       );
-      return res.status(200).send({ message: "Login Success", token: token });
+      return res.status(200).send({ message: "Login Success", token: token,fullname:user.fullname });
     } else {
       return res.status(401).send({ message: "Invalid Credentials" });
     }
